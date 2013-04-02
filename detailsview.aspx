@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="gridview.aspx.vb" Inherits="gridview" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="detailsview.aspx.vb" Inherits="detailsview" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -13,16 +13,14 @@
         <asp:SqlDataSource ID="ItemsDataSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:sc_TradeWebSite %>" 
             DeleteCommand="DELETE FROM [TradeItems] WHERE [pID] = @pID" 
-            InsertCommand="INSERT INTO [TradeItems] ([pID], [pPicture], [pName], [pCategory], [pDescription], [pMaterial], [pAvailableSizes]) VALUES (@pID, @pPicture, @pName, @pCategory, @pDescription, @pMaterial, @pAvailableSizes)" 
+            InsertCommand="INSERT INTO [TradeItems] ([pID], [pName], [pCategory], [pDescription], [pMaterial], [pAvailableSizes]) VALUES (@pID, @pName, @pCategory, @pDescription, @pMaterial, @pAvailableSizes)" 
             SelectCommand="SELECT * FROM [TradeItems]" 
-            
-            UpdateCommand="UPDATE [TradeItems] SET [pPicture] = @pPicture, [pName] = @pName, [pCategory] = @pCategory, [pDescription] = @pDescription, [pMaterial] = @pMaterial, [pAvailableSizes] = @pAvailableSizes WHERE [pID] = @pID">
+            UpdateCommand="UPDATE [TradeItems] SET [pName] = @pName, [pCategory] = @pCategory, [pDescription] = @pDescription, [pMaterial] = @pMaterial, [pAvailableSizes] = @pAvailableSizes WHERE [pID] = @pID">
             <DeleteParameters>
                 <asp:Parameter Name="pID" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="pID" Type="Int32" />
-                <asp:Parameter Name="pPicture" Type="Object" />
                 <asp:Parameter Name="pName" Type="String" />
                 <asp:Parameter Name="pCategory" Type="String" />
                 <asp:Parameter Name="pDescription" Type="String" />
@@ -30,7 +28,6 @@
                 <asp:Parameter Name="pAvailableSizes" Type="String" />
             </InsertParameters>
             <UpdateParameters>
-                <asp:Parameter Name="pPicture" Type="Object" />
                 <asp:Parameter Name="pName" Type="String" />
                 <asp:Parameter Name="pCategory" Type="String" />
                 <asp:Parameter Name="pDescription" Type="String" />
@@ -39,11 +36,10 @@
                 <asp:Parameter Name="pID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
-            AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="pID" 
-            DataSourceID="ItemsDataSource" PageSize = "7">
-            <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+        <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" 
+            AutoGenerateRows="False" DataKeyNames="pID" DataSourceID="ItemsDataSource" 
+            Height="50px" Width="899px">
+            <Fields>
                 <asp:BoundField DataField="pID" HeaderText="Product ID" ReadOnly="True" 
                     SortExpression="pID" />
                 <asp:BoundField DataField="pName" HeaderText="Name" SortExpression="pName" />
@@ -55,8 +51,10 @@
                     SortExpression="pMaterial" />
                 <asp:BoundField DataField="pAvailableSizes" HeaderText="Available Sizes" 
                     SortExpression="pAvailableSizes" />
-            </Columns>
-        </asp:GridView>
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
+                    ShowInsertButton="True" />
+            </Fields>
+        </asp:DetailsView>
     
     </div>
     </form>
