@@ -61,8 +61,6 @@
                     SortExpression="pMaterial" />
                 <asp:BoundField DataField="pAvailableSizes" HeaderText="Available Sizes" 
                     SortExpression="pAvailableSizes" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
-                    ShowInsertButton="True" />
             </Fields>
         </asp:DetailsView>
     

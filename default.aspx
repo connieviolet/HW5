@@ -13,8 +13,6 @@
     Welcome to Connie's Trade!<br /><br />
 
     <a href="./Items.aspx">View All Items</a>
-    <br />
-    <a href="./newitem.aspx">Add A New Item</a>
 
     <br /><br />
     Data sourced from:
