@@ -39,6 +39,10 @@
                 <asp:Parameter Name="pID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
+        <br />
+        <a href="default.aspx">Home</a>
+        <br />
+        <a href="./newitem.aspx">Add A New Item</a>
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="pID" 
             DataSourceID="ItemsDataSource" PageSize = "7">

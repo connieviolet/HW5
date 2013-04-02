@@ -40,6 +40,11 @@
                 <asp:Parameter Name="pID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
+        <br />
+        <a href="default.aspx">Home</a>
+        <br />
+        <a href="./Items.aspx">View All Items</a>
+        <br />
         <asp:DetailsView ID="DetailsView1" runat="server" 
             AutoGenerateRows="False" DataKeyNames="pID" DataSourceID="ItemsDataSource" 
             Height="50px" Width="899px" DefaultMode="Insert">
