@@ -1,15 +1,10 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="itemsdetails.aspx.vb" Inherits="detailsview" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="itemsdetails.aspx.vb" Inherits="admin_itemsdetails" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link rel="Stylesheet" type="text/css" href="../css/Style.css" />
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div style="width: 877px">
     
         <asp:SqlDataSource ID="ItemsDataSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:sc_TradeWebSite %>" 
@@ -48,7 +43,7 @@
         <br />
         <asp:DetailsView ID="DetailsView1" runat="server" 
             AutoGenerateRows="False" DataKeyNames="pID" DataSourceID="ItemsDataSource" 
-            Height="50px" Width="899px">
+            Height="50px" Width="874px">
             <Fields>
                 <asp:BoundField DataField="pID" HeaderText="Product ID" ReadOnly="True" 
                     SortExpression="pID" />
@@ -61,12 +56,9 @@
                     SortExpression="pMaterial" />
                 <asp:BoundField DataField="pAvailableSizes" HeaderText="Available Sizes" 
                     SortExpression="pAvailableSizes" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" 
-                    ShowInsertButton="True" />
+                <asp:CommandField ShowEditButton="True" ShowInsertButton="True" />
             </Fields>
         </asp:DetailsView>
-    
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

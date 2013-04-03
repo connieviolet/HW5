@@ -1,7 +1,6 @@
 ﻿
-Partial Class detailsview
+Partial Class admin_itemsdetails
     Inherits System.Web.UI.Page
-
     Protected Sub DetailsView1_ItemDeleted(sender As Object, e As System.Web.UI.WebControls.DetailsViewDeletedEventArgs) Handles DetailsView1.ItemDeleted
         Dim delItem As String = e.Values("pName").ToString()
         Response.Write("The record ")
@@ -16,4 +15,7 @@ Partial Class detailsview
         Response.Redirect("./Items.aspx")
     End Sub
 
+    Protected Sub DetailsView1_ItemInserted(sender As Object, e As System.Web.UI.WebControls.DetailsViewInsertedEventArgs) Handles DetailsView1.ItemInserted
+        Response.Redirect("./Items.aspx")
+    End Sub
 End Class

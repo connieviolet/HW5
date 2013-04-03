@@ -1,13 +1,9 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Items.aspx.vb" Inherits="gridview" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="Items.aspx.vb" Inherits="admin_Default2" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="Stylesheet" type="text/css" href="../css/Style.css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div>
     
         <asp:SqlDataSource ID="ItemsDataSource" runat="server" 
@@ -56,6 +52,5 @@
         </asp:GridView>
     
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

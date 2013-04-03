@@ -7,13 +7,16 @@
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="Stylesheet" type="text/css" href="../css/Style.css" />
+    <link rel="Stylesheet" type="text/css" href="./css/Style.css" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="container">
         <div id="header">
             <h1>Connie's Kitchen</h1>
+        </div>
+        <div id="menu">
+            Connie's Trade
         </div>
         <div id="main">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">

@@ -1,14 +1,10 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="newitem.aspx.vb" Inherits="detailsview" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="newitem.aspx.vb" Inherits="admin_newitem" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link rel="Stylesheet" type="text/css" href="../css/Style.css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div style="width: 879px">
     
         <asp:SqlDataSource ID="ItemsDataSource" runat="server" 
             ConnectionString="<%$ ConnectionStrings:sc_TradeWebSite %>" 
@@ -47,7 +43,7 @@
         <br />
         <asp:DetailsView ID="DetailsView1" runat="server" 
             AutoGenerateRows="False" DataKeyNames="pID" DataSourceID="ItemsDataSource" 
-            Height="50px" Width="899px" DefaultMode="Insert">
+            Height="50px" Width="868px" DefaultMode="Insert">
             <Fields>
                 <asp:BoundField DataField="pID" HeaderText="Product ID" ReadOnly="True" 
                     SortExpression="pID" />
@@ -66,6 +62,5 @@
         </asp:DetailsView>
     
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
