@@ -35,8 +35,6 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <a href="default.aspx">Home</a>
-        <br />
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" 
             AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="pID" 
             DataSourceID="ItemsDataSource" PageSize = "7">

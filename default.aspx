@@ -6,9 +6,6 @@
     <div>
     
         Welcome to Connie's Trade!<br /><br />
-        <a href="./login/Default.aspx">Log In</a>
-        <br />
-        <a href="./Items.aspx">View All Items</a>
         <br /><br />
         Data sourced from:
         <br />
